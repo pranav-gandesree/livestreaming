@@ -1,0 +1,12 @@
+version: "3.9"
+services:
+  nginx-rtmp:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+      ports:
+        - "1935:1935"
+        - "8080:8080"
+      container-name: rtmp_server
+      volumes:
+        - ./hls:/hls
