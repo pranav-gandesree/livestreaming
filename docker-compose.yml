@@ -1,12 +1,13 @@
 version: "3.9"
+
 services:
   nginx-rtmp:
     build:
       context: ./backend
       dockerfile: Dockerfile
-      ports:
-        - "1935:1935"
-        - "8080:8080"
-      container-name: rtmp_server
-      volumes:
-        - ./hls:/hls
+    ports:
+      - "1935:1935"  # RTMP server for OBS
+      - "8080:8080"  # HLS stream for playback
+    container_name: rtmp_server
+    volumes:
+      - ./hls:/tmp/hls

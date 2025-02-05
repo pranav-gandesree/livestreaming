@@ -7,7 +7,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/stream/:streamKey" element={<Stream />} />
+        <Route path="live/stream/:streamKey" element={<Stream />} />
       </Routes>
     </Router>
   );
